@@ -76,6 +76,12 @@ User enters a YouTube channel -> Videos are fetched -> User selects -> Transcrip
 - Project Push to Github -> got railway.app -> create a new project and deploy from github repo and add the variables -> railway will deploy and give the public url 
 
 
+**Output Screenshot**
+
+<img width="1229" height="569" alt="image" src="https://github.com/user-attachments/assets/43e2dd63-71cc-464f-8a5e-10c34ba44cf1" />
+
+<img width="1420" height="784" alt="image" src="https://github.com/user-attachments/assets/b82a7a7d-00c3-4c35-9646-d73f1b0f8227" />
+
 
 
 
