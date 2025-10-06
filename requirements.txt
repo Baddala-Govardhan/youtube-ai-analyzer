@@ -1,0 +1,7 @@
+streamlit
+google-api-python-client
+youtube-transcript-api
+requests
+textblob
+pandas
+python-dotenv
