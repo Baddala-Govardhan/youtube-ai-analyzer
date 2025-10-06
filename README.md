@@ -33,20 +33,24 @@ Railway – For fast cloud deployment with secret management
 
 **Setup**
 
-#Clone repository
+**Clone repository**
 
 git clone https://github.com/Baddala-Govardhan/youtube-ai-analyzer.git
 
 cd youtube-ai-analyzer
 
-#Create virtual environment
+**Create virtual environment**
+
 python3 -m venv venv
+
 source venv/bin/activate
 
-#Install dependencies
+**Install dependencies**
+
 pip install -r requirements.txt
 
-#Run locally
+**Run locally**
+
 streamlit run app.py
 
 
