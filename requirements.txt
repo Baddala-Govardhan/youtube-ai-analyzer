@@ -5,3 +5,5 @@ requests
 textblob
 pandas
 python-dotenv
+protobuf==3.20.3
+altair==5.0.1
