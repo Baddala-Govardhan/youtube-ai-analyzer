@@ -13,6 +13,8 @@ I choose simplicity over scalability. Instead of a full backend (eg,flask) so ev
 
 **c. What you would improve with more time**
 
+- Introduce a dashboard view with charts for sentiment trends and summaries across multiple videos
+- 
 
 
 **Architecture Workflow**
