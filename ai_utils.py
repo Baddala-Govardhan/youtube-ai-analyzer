@@ -30,17 +30,39 @@ def analyze_video(title, transcript):
     4. Content quality
     Transcript: {transcript[:3000]}
     """
-    response = requests.post(
-        "https://openrouter.ai/api/v1/chat/completions",
-        headers={"Authorization": f"Bearer {LLM_API_KEY}"},
-        json={
-            "model": "openai/gpt-3.5-turbo",
-            "messages": [{"role": "user", "content": prompt}],
-        },
-        timeout=60
-    )
-    data = response.json()
-    return data["choices"][0]["message"]["content"]
+    # response = requests.post(
+    #     "https://openrouter.ai/api/v1/chat/completions",
+    #     headers={"Authorization": f"Bearer {LLM_API_KEY}"},
+    #     json={
+    #         "model": "openai/gpt-3.5-turbo",
+    #         "messages": [{"role": "user", "content": prompt}],
+    #     },
+    #     timeout=60
+    # )
+    # data = response.json()
+    # return data["choices"][0]["message"]["content"]
+
+    try:
+        response = requests.post(
+            "https://openrouter.ai/api/v1/chat/completions",
+            headers={"Authorization": f"Bearer {LLM_API_KEY}"},
+            json={
+                "model": "gpt-3.5-turbo",
+                "messages": [{"role": "user", "content": prompt}],
+            },
+            timeout=60
+        )
+        data = response.json()
+
+        if "choices" in data and len(data["choices"]) > 0:
+            return data["choices"][0]["message"]["content"]
+        elif "error" in data:
+            return f"OpenRouter API error: {data['error'].get('message', str(data['error']))}"
+        else:
+            return f"Unexpected response: {data}"
+    
+    except Exception as e:
+        return f"Error analyzing video: {str(e)}"
 
 def analyze_comments(video_id):
     youtube = get_youtube_client()
